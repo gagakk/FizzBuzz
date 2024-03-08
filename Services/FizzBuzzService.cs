@@ -32,7 +32,7 @@ namespace FizzBuzz
                     }
                     else
                     {
-                        results.Add(FizzBuzzLogic.CalculateResult(parsedNumber));
+                        results.Add(outputString);
                     }
                 }
                 else
