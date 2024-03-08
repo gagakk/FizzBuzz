@@ -12,11 +12,7 @@ namespace FizzBuzz
 
             foreach (var item in inputArray)
             {
-                if (item is int number)
-                {
-                    results.Add(FizzBuzzLogic.CalculateResult(number));
-                }
-                else if (int.TryParse(item.ToString(), out int parsedNumber))
+                if (int.TryParse(item.ToString(), out int parsedNumber))
                 {
                     string outputString = FizzBuzzLogic.CalculateResult(parsedNumber);
                     if (outputString.Contains('\n'))
