@@ -2,6 +2,17 @@ using FizzBuzz;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "myassignment",
+                      policy =>
+                      {
+                          policy.AllowAnyOrigin();
+                          policy.AllowAnyMethod();
+                          policy.AllowAnyHeader();
+                      });
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -23,7 +34,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Enable CORS (AllowAnyOrigin for development, you may want to restrict this in production)
+app.UseCors("myassignment");
 app.UseAuthorization();
+
+
 
 app.MapControllers();
 

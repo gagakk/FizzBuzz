@@ -1,5 +1,6 @@
 ﻿using FizzBuzz;
 using FizzBuzz.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
